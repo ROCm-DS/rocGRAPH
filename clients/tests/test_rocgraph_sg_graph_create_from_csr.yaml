@@ -1,0 +1,41 @@
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+---
+include: rocgraph_common.yaml
+include: known_bugs.yaml
+
+Tests:
+- name: rocgraph_sg_graph_create_from_csr_bad_arg
+  category: pre_checkin
+  function: rocgraph_sg_graph_create_from_csr_bad_arg
+  precision: *single_double_precisions
+
+- name: rocgraph_sg_graph_create_from_csr
+  category: quick
+  function: rocgraph_sg_graph_create_from_csr
+  precision: *single_double_precisions
+  M: [0, 3, 8, 13, 64, 256]
+  N: [0, 3, 8, 13, 64, 256]
+  denseld: [-8, 64, 512]
+  direction: [rocgraph_direction_row, rocgraph_direction_column]
+
+- name: rocgraph_sg_graph_create_from_csr
+  category: pre_checkin
+  function: rocgraph_sg_graph_create_from_csr
+  precision: *single_double_precisions
+  M: [0, 531, 1000]
+  N: [0, 241, 1000]
+  denseld: [100, 1000, 2000]
+  direction: [rocgraph_direction_row, rocgraph_direction_column]
+
+- name: rocgraph_sg_graph_create_from_csr
+  category: nightly
+  function: rocgraph_sg_graph_create_from_csr
+  precision: *single_double_precisions
+  M: [2000, 4000, 8000]
+  N: [2000, 4000]
+  denseld: [ 8000 ]
+  direction: [rocgraph_direction_row, rocgraph_direction_column]

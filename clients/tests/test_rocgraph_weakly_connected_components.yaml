@@ -1,0 +1,39 @@
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+---
+include: rocgraph_common.yaml
+
+Tests:
+
+- name: rocgraph_weakly_connected_components
+  category: quick
+  function: rocgraph_weakly_connected_components
+  precision: *single_double_precisions
+  M: [32, 64, 128, 256]
+
+- category: quick
+  function: rocgraph_weakly_connected_components_extra
+  name:  WeaklyConnectedComponents
+
+- category: quick
+  function: rocgraph_weakly_connected_components_extra
+  name:  WeaklyConnectedComponentsTranspose
+
+- category: quick
+  function: rocgraph_weakly_connected_components_extra
+  name:  WeaklyConnectedComponents
+
+- category: quick
+  function: rocgraph_weakly_connected_components_extra
+  name:  WeaklyConnectedComponentsTranspose
+
+
+
+- name: rocgraph_weakly_connected_components
+  category: known_bugs
+  function: rocgraph_weakly_connected_components
+  precision: *single_double_precisions
+  M: [512]

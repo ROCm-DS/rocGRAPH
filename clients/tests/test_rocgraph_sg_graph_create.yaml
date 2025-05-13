@@ -1,0 +1,63 @@
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+---
+include: rocgraph_common.yaml
+
+Tests:
+
+- name: rocgraph_sg_graph_create
+  category: quick
+  function: rocgraph_sg_graph_create
+  precision: *single_double_precisions
+  M: [32, 64, 128, 256, 512]
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphSimple
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphSimple
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphCsr
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphCsr
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphSymmetricError
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphSymmetricError
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphWithIsolatedVertices
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphWithIsolatedVertices
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphCsrWithIsolated
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphCsrWithIsolated
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphWithIsolatedVerticesMultiInput
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphWithIsolatedVerticesMultiInput

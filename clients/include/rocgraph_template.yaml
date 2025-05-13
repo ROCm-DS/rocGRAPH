@@ -1,0 +1,32 @@
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+# Template used to process YAML from log files
+---
+include: rocgraph_common.yaml
+
+Functions:
+  rocgraph_scoomv: { function: coomv, <<: *single_precision }
+  rocgraph_dcoomv: { function: coomv, <<: *double_precision }
+  rocgraph_scsrmv_analysis: { function: csrmv, <<: *single_precision }
+  rocgraph_dcsrmv_analysis: { function: csrmv, <<: *double_precision }
+  rocgraph_scsrmv: { function: csrmv, <<: *single_precision }
+  rocgraph_dcsrmv: { function: csrmv, <<: *double_precision }
+  rocgraph_csrmv_clear: { function: csrmv }
+  rocgraph_scsrmm: { function: csrmm, <<: *single_precision }
+  rocgraph_dcsrmm: { function: csrmm, <<: *double_precision }
+
+  rocgraph_snnz: { function: nnz, <<: *single_precision }
+  rocgraph_dnnz: { function: nnz, <<: *double_precision }
+  rocgraph_csr2coo: { function: csr2coo }
+  rocgraph_coo2csr: { function: coo2csr }
+  rocgraph_scsr2csc: { function: csr2csc, <<: *single_precision }
+  rocgraph_dcsr2csc: { function: csr2csc, <<: *double_precision }
+  rocgraph_csrsort: { function: csrsort }
+  rocgraph_bfs: { function: rocgraph_bfs }
+  rocgraph_cscsort: { function: cscsort }
+  rocgraph_coosort_by_row: { function: coosort }
+  rocgraph_coosort_by_column: { function: coosort }
+Tests:

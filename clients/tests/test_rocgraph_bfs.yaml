@@ -1,0 +1,27 @@
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+---
+include: rocgraph_common.yaml
+
+Tests:
+
+- name: rocgraph_bfs
+  category: quick
+  function: rocgraph_bfs
+  precision: *single_double_precisions
+  M: [32, 64, 128, 256, 512]
+
+- category: quick
+  function: rocgraph_bfs_extra
+  name: BfsWithTranspose
+
+- category: quick
+  function: rocgraph_bfs_extra
+  name: Bfs
+
+- category: quick
+  function: rocgraph_bfs_extra
+  name: BfsExceptions

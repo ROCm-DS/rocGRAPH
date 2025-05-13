@@ -1,0 +1,10 @@
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+# A list of known bugs/failures. The bug can be specific or general.
+# A test case is considered as matching if all indicated parameters match.
+# Wildcards can be used for the function
+
+Known bugs:
