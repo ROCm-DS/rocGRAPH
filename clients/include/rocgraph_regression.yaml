@@ -1,0 +1,483 @@
+# Copyright (C) 2025 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+---
+include: rocgraph_common.yaml
+
+Tests:
+
+- category: quick
+  function: rocgraph_balanced_cut_clustering_extra
+  name: LegacySpectral
+
+- category: quick
+  function: rocgraph_balanced_cut_clustering_extra
+  name: LegacyBalancedCutUnequalWeight
+
+- category: quick
+  function: rocgraph_balanced_cut_clustering_extra
+  name: LegacyBalancedCutEqualWeight
+
+- category: quick
+  function: rocgraph_balanced_cut_clustering_extra
+  name: LegacyBalancedCutNoWeight
+
+- category: quick
+  function: rocgraph_betweenness_centrality_extra
+  name: BetweennessCentralityFull
+
+- category: quick
+  function: rocgraph_betweenness_centrality_extra
+  name: BetweennessCentralityFullDirected
+
+- category: quick
+  function: rocgraph_betweenness_centrality_extra
+  name: BetweennessCentralitySpecificNormalized
+
+- category: quick
+  function: rocgraph_betweenness_centrality_extra
+  name: BetweennessCentralitySpecificUnnormalized
+
+- category: quick
+  function: rocgraph_betweenness_centrality_extra
+  name: BetweennessCentralityTestEndpoints
+
+- category: quick
+  function: rocgraph_betweenness_centrality_extra
+  name: BetweennessCentralityFullDirectedNormalizedKarate
+
+- category: quick
+  function: rocgraph_bfs_extra
+  name: BfsWithTranspose
+
+- category: quick
+  function: rocgraph_bfs_extra
+  name: Bfs
+
+- category: quick
+  function: rocgraph_bfs_extra
+  name: BfsExceptions
+
+- category: quick
+  function: rocgraph_core_number_extra
+  name: CoreNumber
+
+- category: quick
+  function: rocgraph_ecg_extra
+  name: Ecg
+
+- category: quick
+  function: rocgraph_ecg_extra
+  name: EcgNoWeight
+
+- category: quick
+  function: rocgraph_edge_betweenness_centrality_extra
+  name: EdgeBetweennessCentrality
+
+- category: quick
+  function: rocgraph_eigenvector_centrality_extra
+  name: EigenvectorCentrality3971
+
+- category: quick
+  function: rocgraph_eigenvector_centrality_extra
+  name: EigenvectorCentrality
+
+- category: quick
+  function: rocgraph_extract_ego_extra
+  name: Egonet
+
+- category: quick
+  function: rocgraph_extract_ego_extra
+  name: EgonetNoWeights
+
+- category: quick
+  function: rocgraph_extract_induced_subgraph_extra
+  name:    InducedSubgraph
+
+- category: quick
+  function: rocgraph_extract_paths_extra
+  name:    BfsWithExtractPaths
+
+- category: quick
+  function: rocgraph_extract_paths_extra
+  name:    BfsWithExtractPathsWithTranspose
+
+
+- category: quick
+  function: rocgraph_generate_rmat_edgelist_extra
+  name: RMAT
+
+- category: quick
+  function: rocgraph_generate_rmat_edgelist_extra
+  name: RMATList
+
+- category: quick
+  function: rocgraph_hits_extra
+  name:    Hits
+
+- category: quick
+  function: rocgraph_hits_extra
+  name:    HitsWithTranspose
+
+- category: quick
+  function: rocgraph_hits_extra
+  name:    HitsWithInitial
+
+- category: quick
+  function: rocgraph_hits_extra
+  name:    HitsBigger
+
+- category: quick
+  function: rocgraph_hits_extra
+  name:    HitsBiggerUnnormalized
+
+- category: quick
+  function: rocgraph_hits_extra
+  name:    HitsBiggerNormalized
+
+- category: quick
+  function: rocgraph_jaccard_coefficients_extra
+  name: Jaccard
+
+- category: quick
+  function: rocgraph_jaccard_coefficients_extra
+  name: WeightedJaccard
+
+- category: quick
+  function: rocgraph_jaccard_coefficients_extra
+  name: AllPairsJaccard
+
+- category: quick
+  function: rocgraph_jaccard_coefficients_extra
+  name: WeightedAllPairsJaccard
+
+- category: quick
+  function: rocgraph_jaccard_coefficients_extra
+  name: AllPairsJaccardTopk
+
+- category: quick
+  function: rocgraph_jaccard_coefficients_extra
+  name: WeightedAllPairsJaccardTopk
+
+- category: quick
+  function: rocgraph_katz_centrality_extra
+  name: Katz
+
+
+- category: quick
+  function: rocgraph_k_core_extra
+  name: KCore
+
+- category: quick
+  function: rocgraph_k_core_extra
+  name: KCoreNoWeights
+
+- category: quick
+  function: rocgraph_k_truss_subgraph_extra
+  name: KTruss
+
+- category: quick
+  function: rocgraph_k_truss_subgraph_extra
+  name: KTrussNoWeights
+
+- category: quick
+  function: rocgraph_legacy_ecg_extra
+  name:    LegacyEcg
+
+- category: quick
+  function: rocgraph_leiden_extra
+  name:    Leiden
+
+- category: quick
+  function: rocgraph_leiden_extra
+  name:    LeidenNoWeights
+
+- category: quick
+  function: rocgraph_louvain_extra
+  name:    Louvain
+
+- category: quick
+  function: rocgraph_louvain_extra
+  name:    LouvainNoWeight
+
+- category: quick
+  function: rocgraph_node2vec_extra
+  name:    Node2vec
+
+- category: quick
+  function: rocgraph_node2vec_extra
+  name:    Node2vecShortDense
+
+- category: quick
+  function: rocgraph_node2vec_extra
+  name:    Node2vecShortSparse
+
+- category: quick
+  function: rocgraph_node2vec_extra
+  name:    Node2vecKarate
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:  Degrees
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:  DegreesSymmetric
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:  InDegrees
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:      OutDegrees
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:      DegreesSubset
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:  DegreesSymmetricSubset
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:          DegreesSymmetricSubset
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:  InDegreesSubset
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:      OutDegreesSubset
+
+- category: quick
+  function: rocgraph_overlap_coefficients_extra
+  name: Overlap
+
+- category: quick
+  function: rocgraph_overlap_coefficients_extra
+  name: WeightedOverlap
+
+- category: quick
+  function: rocgraph_overlap_coefficients_extra
+  name: AllPairsOverlap
+
+- category: quick
+  function: rocgraph_overlap_coefficients_extra
+  name: WeightedAllPairsOverlap
+
+- category: quick
+  function: rocgraph_overlap_coefficients_extra
+  name: AllPairsOverlapTopk
+
+- category: quick
+  function: rocgraph_overlap_coefficients_extra
+  name: WeightedAllPairsOverlapTopk
+
+- category: quick
+  function: rocgraph_pagerank_extra
+  name:    Pagerank
+
+- category: quick
+  function: rocgraph_pagerank_extra
+  name:    PagerankWithTranspose
+
+- category: quick
+  function: rocgraph_pagerank_extra
+  name:    Pagerank4
+
+- category: quick
+  function: rocgraph_pagerank_extra
+  name:    Pagerank4WithTranspose
+
+- category: quick
+  function: rocgraph_pagerank_extra
+  name:    PagerankNonConvergence
+
+- category: quick
+  function: rocgraph_pagerank_extra
+  name:    PersonalizedPagerank
+
+- category: quick
+  function: rocgraph_pagerank_extra
+  name:    PersonalizedPagerankNonConvergence
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphSimple
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphSimple
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphCsr
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphCsr
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphSymmetricError
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphSymmetricError
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphWithIsolatedVertices
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphWithIsolatedVertices
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphCsrWithIsolated
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphCsrWithIsolated
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphWithIsolatedVerticesMultiInput
+
+- category: quick
+  function: rocgraph_sg_graph_create_extra
+  name: CreateSgGraphWithIsolatedVerticesMultiInput
+
+- category: quick
+  function: rocgraph_sorensen_coefficients_extra
+  name: Sorensen
+
+- category: quick
+  function: rocgraph_sorensen_coefficients_extra
+  name: WeightedSorensen
+
+- category: quick
+  function: rocgraph_sorensen_coefficients_extra
+  name: AllPairsSorensen
+
+- category: quick
+  function: rocgraph_sorensen_coefficients_extra
+  name: WeightedAllPairsSorensen
+
+- category: quick
+  function: rocgraph_sorensen_coefficients_extra
+  name: AllPairsSorensenTopk
+
+- category: quick
+  function: rocgraph_sorensen_coefficients_extra
+  name: WeightedAllPairsSorensenTopk
+
+- category: quick
+  function: rocgraph_spectral_modularity_maximization_extra
+  name:    LegacySpectral
+
+- category: quick
+  function: rocgraph_spectral_modularity_maximization_extra
+  name:    LegacyBalancedCutUnequalWeight
+
+- category: quick
+  function: rocgraph_spectral_modularity_maximization_extra
+  name:    LegacyBalancedCutEqualWeight
+
+- category: quick
+  function: rocgraph_spectral_modularity_maximization_extra
+  name:    LegacyBalancedCutNoWeight
+
+- category: quick
+  function: rocgraph_sssp_extra
+  name: Sssp
+
+- category: quick
+  function: rocgraph_sssp_extra
+  name: SsspWithTranspose
+
+- category: quick
+  function: rocgraph_sssp_extra
+  name: SsspWithTransposeDouble
+
+- category: quick
+  function: rocgraph_strongly_connected_components_extra
+  name: StronglyConnectedComponents
+
+- category: quick
+  function: rocgraph_triangle_count_extra
+  name: TriangleCount
+
+- category: quick
+  function: rocgraph_triangle_count_extra
+  name:  TriangleCountDolphins
+
+- category: quick
+  function: rocgraph_two_hop_neighbors_extra
+  name: TwoHopNbrOne
+
+- category: quick
+  function: rocgraph_two_hop_neighbors_extra
+  name: TwoHopNbrAll
+
+- category: quick
+  function: rocgraph_uniform_neighbor_sample_extra
+  name: UniformNeighborSampleClean
+
+- category: quick
+  function: rocgraph_uniform_neighbor_sample_extra
+  name: UniformNeighborSampleDedupeSources
+
+- category: quick
+  function: rocgraph_uniform_neighbor_sample_extra
+  name: UniformNeighborSampleUniqueSources
+
+- category: quick
+  function: rocgraph_uniform_neighbor_sample_extra
+  name: UniformNeighborSampleCarryOverSources
+
+- category: quick
+  function: rocgraph_uniform_neighbor_sample_extra
+  name: UniformNeighborSampleRenumberResults
+
+- category: quick
+  function: rocgraph_uniform_neighbor_sample_extra
+  name: UniformNeighborSampleWithLabels
+
+- category: quick
+  function: rocgraph_uniform_random_walks_extra
+  name:    UniformRandomWalks
+
+- category: quick
+  function: rocgraph_uniform_random_walks_extra
+  name:    BiasedRandomWalks
+
+- category: quick
+  function: rocgraph_uniform_random_walks_extra
+  name:    Node2vecRandomWalks
+
+- category: quick
+  function: rocgraph_uniform_random_walks_extra
+  name:    UniformRandomWalksOob
+
+- category: quick
+  function: rocgraph_weakly_connected_components_extra
+  name:  WeaklyConnectedComponents
+
+- category: quick
+  function: rocgraph_weakly_connected_components_extra
+  name:  WeaklyConnectedComponentsTranspose
+
+- category: quick
+  function: rocgraph_weakly_connected_components_extra
+  name:  WeaklyConnectedComponents
+
+- category: quick
+  function: rocgraph_weakly_connected_components_extra
+  name:  WeaklyConnectedComponentsTranspose

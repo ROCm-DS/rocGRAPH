@@ -1,0 +1,30 @@
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+---
+include: rocgraph_common.yaml
+
+Tests:
+
+- name: rocgraph_node2vec
+  category: quick
+  function: rocgraph_node2vec
+  precision: *single_double_precisions
+  M: [32, 64, 128, 256, 512]
+- category: quick
+  function: rocgraph_node2vec_extra
+  name:    Node2vec
+
+- category: quick
+  function: rocgraph_node2vec_extra
+  name:    Node2vecShortDense
+
+- category: quick
+  function: rocgraph_node2vec_extra
+  name:    Node2vecShortSparse
+
+- category: quick
+  function: rocgraph_node2vec_extra
+  name:    Node2vecKarate

@@ -1,0 +1,38 @@
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+---
+include: rocgraph_common.yaml
+
+Tests:
+
+- name: rocgraph_jaccard_coefficients
+  category: quick
+  function: rocgraph_jaccard_coefficients
+  precision: *single_double_precisions
+  M: [32, 64, 128, 256, 512]
+- category: quick
+  function: rocgraph_jaccard_coefficients_extra
+  name: Jaccard
+
+- category: quick
+  function: rocgraph_jaccard_coefficients_extra
+  name: WeightedJaccard
+
+- category: quick
+  function: rocgraph_jaccard_coefficients_extra
+  name: AllPairsJaccard
+
+- category: quick
+  function: rocgraph_jaccard_coefficients_extra
+  name: WeightedAllPairsJaccard
+
+- category: quick
+  function: rocgraph_jaccard_coefficients_extra
+  name: AllPairsJaccardTopk
+
+- category: quick
+  function: rocgraph_jaccard_coefficients_extra
+  name: WeightedAllPairsJaccardTopk

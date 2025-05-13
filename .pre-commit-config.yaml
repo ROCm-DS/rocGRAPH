@@ -1,0 +1,66 @@
+# SPDX-FileCopyrightText: (C) 2024 Advanced Micro Devices, Inc.
+# SPDX-License-Identifier: MIT
+
+# Default set of hooks for hipGRAPH.
+#
+# Be careful about indentation in this file. It's YAML, and
+# YAML if very, very picky.
+
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+---
+repos:
+ - repo: https://github.com/pre-commit/pre-commit-hooks
+   rev: v4.6.0
+   hooks:
+    - id: trailing-whitespace
+      exclude: ^deps/patch/
+    - id: end-of-file-fixer
+      exclude: ^deps/patch/
+    # Too fiddly. So is yaml, but oh well.
+    # - id: check-yaml
+    - id: check-added-large-files
+      args: ['--maxkb=6000']
+    - id: check-merge-conflict
+    - id: mixed-line-ending
+      args: ['--fix=auto']
+    - id: no-commit-to-branch
+      args: ['--branch', 'develop', '--branch', 'main']
+
+ - repo: https://github.com/pre-commit/mirrors-clang-format
+   rev: v18.1.5
+   hooks:
+    - id: clang-format
+      types_or: [c++, c, cuda]
+
+# https://github.com/cheshirekow/cmake-format-precommit is
+# missing a dep. on pyYAML
+ - repo: https://github.com/Kr4is/cmake-format-precommit.git
+   rev: v0.6.14
+   hooks:
+    - id: cmake-format
+
+# The next two are for Python *formatting*. We could add
+# additional tools like mypy
+ - repo: https://github.com/psf/black
+   rev: 24.4.2
+   hooks:
+    - id: black
+
+ - repo: https://github.com/pycqa/isort
+   rev: 5.13.2
+   hooks:
+     - id: isort
+       args: ["--profile", "black", "--filter-files"]
+       name: isort (python)
+
+# Currently these produce too much noise to run by default.
+# This is left here as documentation for running try-repo.
+# That will point out the problems we need to fix:
+# pre-commit try-repo https://github.com/sbrunner/hooks copyright-required.
+
+# - repo: https://github.com/sbrunner/hooks
+#   rev: 1.0.0
+#   hooks:
+#    # Check that the copyright is present and up to date
+#    - id: copyright-required
