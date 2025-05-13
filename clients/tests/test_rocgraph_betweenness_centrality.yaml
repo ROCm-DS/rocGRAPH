@@ -1,0 +1,52 @@
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+---
+include: rocgraph_common.yaml
+
+Tests:
+
+
+- name: rocgraph_betweenness_centrality
+  category: quick
+  function: rocgraph_betweenness_centrality
+  precision: *single_double_precisions
+  M: [32, 64, 128, 512]
+
+- name: rocgraph_betweenness_centrality
+  category: pre_checkin
+  function: rocgraph_betweenness_centrality
+  precision: *single_double_precisions
+  M: [1024, 4096]
+
+- name: rocgraph_betweenness_centrality
+  category: nightly
+  function: rocgraph_betweenness_centrality
+  precision: *single_double_precisions
+  M: [4096]
+
+- category: quick
+  function: rocgraph_betweenness_centrality_extra
+  name: BetweennessCentralityFull
+
+- category: quick
+  function: rocgraph_betweenness_centrality_extra
+  name: BetweennessCentralityFullDirected
+
+- category: quick
+  function: rocgraph_betweenness_centrality_extra
+  name: BetweennessCentralitySpecificNormalized
+
+- category: quick
+  function: rocgraph_betweenness_centrality_extra
+  name: BetweennessCentralitySpecificUnnormalized
+
+- category: quick
+  function: rocgraph_betweenness_centrality_extra
+  name: BetweennessCentralityTestEndpoints
+
+- category: quick
+  function: rocgraph_betweenness_centrality_extra
+  name: BetweennessCentralityFullDirectedNormalizedKarate

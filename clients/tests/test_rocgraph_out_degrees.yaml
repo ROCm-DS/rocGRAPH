@@ -1,0 +1,51 @@
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+---
+include: rocgraph_common.yaml
+
+Tests:
+
+- name: rocgraph_out_degrees
+  category: quick
+  function: rocgraph_out_degrees
+  precision: *single_double_precisions
+  M: [32, 64, 128, 256, 512]
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:  Degrees
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:  DegreesSymmetric
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:  InDegrees
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:      OutDegrees
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:      DegreesSubset
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:  DegreesSymmetricSubset
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:          DegreesSymmetricSubset
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:  InDegreesSubset
+
+- category: quick
+  function: rocgraph_out_degrees_extra
+  name:      OutDegreesSubset

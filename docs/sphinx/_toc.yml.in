@@ -1,0 +1,17 @@
+defaults:
+  numbered: False
+root: index
+subtrees:
+
+- caption: Install
+  entries:
+  - file: install/Linux_Install_Guide
+    title: Installing rocGRAPH
+
+- caption: API Reference
+  entries:
+  - file: reference/index.rst
+
+- caption: API Reference
+  entries:
+  - file: license.rst

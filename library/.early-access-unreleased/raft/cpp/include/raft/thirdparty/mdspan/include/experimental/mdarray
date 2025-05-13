@@ -1,0 +1,9 @@
+// Copyright (2019) Sandia Corporation
+// SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+//
+// SPDX-License-Identifier: MIT
+
+#pragma once
+
+#include "mdspan"
+#include "__p1684_bits/mdarray.hpp"

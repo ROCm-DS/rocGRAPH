@@ -1,0 +1,30 @@
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+---
+include: rocgraph_common.yaml
+
+Tests:
+
+- name: rocgraph_spectral_modularity_maximization
+  category: quick
+  function: rocgraph_spectral_modularity_maximization
+  precision: *single_double_precisions
+  M: [32, 64, 128, 256, 512]
+- category: quick
+  function: rocgraph_spectral_modularity_maximization_extra
+  name:    LegacySpectral
+
+- category: quick
+  function: rocgraph_spectral_modularity_maximization_extra
+  name:    LegacyBalancedCutUnequalWeight
+
+- category: quick
+  function: rocgraph_spectral_modularity_maximization_extra
+  name:    LegacyBalancedCutEqualWeight
+
+- category: quick
+  function: rocgraph_spectral_modularity_maximization_extra
+  name:    LegacyBalancedCutNoWeight

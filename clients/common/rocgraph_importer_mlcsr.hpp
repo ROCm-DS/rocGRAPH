@@ -1,0 +1,53 @@
+/*! \file */
+
+// Copyright (C) 2023-2024 Advanced Micro Devices, Inc. All rights Reserved.
+// SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+//
+// SPDX-License-Identifier: MIT
+
+#pragma once
+#ifndef ROCGRAPH_IMPORTER_MLCSR_HPP
+#define ROCGRAPH_IMPORTER_MLCSR_HPP
+#include "rocgraph_importer.hpp"
+
+class rocgraph_importer_mlcsr : public rocgraph_importer<rocgraph_importer_mlcsr>
+{
+protected:
+    std::string m_filename;
+
+public:
+    rocgraph_importer_mlcsr(const std::string& filename_);
+    ~rocgraph_importer_mlcsr();
+
+private:
+    FILE*  m_f{};
+    size_t m_m{};
+    size_t m_k{};
+    size_t m_nnz{};
+
+public:
+    template <typename I = rocgraph_int, typename J = rocgraph_int>
+    rocgraph_status
+        import_graph_csx(rocgraph_direction* dir, J* m, J* n, I* nnz, rocgraph_index_base* base);
+    template <typename T, typename I = rocgraph_int, typename J = rocgraph_int>
+    rocgraph_status import_graph_csx(I* ptr, J* ind, T* val);
+
+    template <typename I = rocgraph_int, typename J = rocgraph_int>
+    rocgraph_status import_graph_gebsx(rocgraph_direction*  dir,
+                                       rocgraph_direction*  dirb,
+                                       J*                   mb,
+                                       J*                   nb,
+                                       I*                   nnzb,
+                                       J*                   block_dim_row,
+                                       J*                   block_dim_column,
+                                       rocgraph_index_base* base);
+    template <typename T, typename I = rocgraph_int, typename J = rocgraph_int>
+    rocgraph_status import_graph_gebsx(I* ptr, J* ind, T* val);
+
+    template <typename I = rocgraph_int>
+    rocgraph_status import_graph_coo(I* m, I* n, int64_t* nnz, rocgraph_index_base* base);
+    template <typename T, typename I = rocgraph_int>
+    rocgraph_status import_graph_coo(I* row_ind, I* col_ind, T* val);
+};
+
+#endif

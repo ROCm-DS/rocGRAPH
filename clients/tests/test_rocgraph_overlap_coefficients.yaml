@@ -1,0 +1,39 @@
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+---
+include: rocgraph_common.yaml
+
+Tests:
+
+- name: rocgraph_overlap_coefficients
+  category: quick
+  function: rocgraph_overlap_coefficients
+  precision: *single_double_precisions
+  M: [32, 64, 128, 256, 512]
+
+- category: quick
+  function: rocgraph_overlap_coefficients_extra
+  name: Overlap
+
+- category: quick
+  function: rocgraph_overlap_coefficients_extra
+  name: WeightedOverlap
+
+- category: quick
+  function: rocgraph_overlap_coefficients_extra
+  name: AllPairsOverlap
+
+- category: quick
+  function: rocgraph_overlap_coefficients_extra
+  name: WeightedAllPairsOverlap
+
+- category: quick
+  function: rocgraph_overlap_coefficients_extra
+  name: AllPairsOverlapTopk
+
+- category: quick
+  function: rocgraph_overlap_coefficients_extra
+  name: WeightedAllPairsOverlapTopk

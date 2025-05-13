@@ -1,0 +1,38 @@
+# Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+# SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+#
+# SPDX-License-Identifier: MIT
+
+include: test_rocgraph_balanced_cut_clustering.yaml
+include: test_rocgraph_betweenness_centrality.yaml
+include: test_rocgraph_bfs.yaml
+include: test_rocgraph_core_number.yaml
+include: test_rocgraph_ecg.yaml
+include: test_rocgraph_edge_betweenness_centrality.yaml
+include: test_rocgraph_eigenvector_centrality.yaml
+include: test_rocgraph_extract_ego.yaml
+include: test_rocgraph_extract_induced_subgraph.yaml
+include: test_rocgraph_extract_paths.yaml
+include: test_rocgraph_generate_rmat_edgelist.yaml
+include: test_rocgraph_hits.yaml
+include: test_rocgraph_jaccard_coefficients.yaml
+include: test_rocgraph_k_core.yaml
+include: test_rocgraph_k_truss_subgraph.yaml
+include: test_rocgraph_katz_centrality.yaml
+include: test_rocgraph_legacy_ecg.yaml
+include: test_rocgraph_leiden.yaml
+include: test_rocgraph_louvain.yaml
+include: test_rocgraph_node2vec.yaml
+include: test_rocgraph_out_degrees.yaml
+include: test_rocgraph_overlap_coefficients.yaml
+include: test_rocgraph_pagerank.yaml
+include: test_rocgraph_sg_graph_create.yaml
+include: test_rocgraph_sorensen_coefficients.yaml
+include: test_rocgraph_spectral_modularity_maximization.yaml
+include: test_rocgraph_sssp.yaml
+include: test_rocgraph_strongly_connected_components.yaml
+include: test_rocgraph_triangle_count.yaml
+include: test_rocgraph_two_hop_neighbors.yaml
+include: test_rocgraph_uniform_neighbor_sample.yaml
+include: test_rocgraph_uniform_random_walks.yaml
+include: test_rocgraph_weakly_connected_components.yaml

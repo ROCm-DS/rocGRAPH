@@ -1,0 +1,17 @@
+version = 1
+
+[[annotations]]
+  path = ["**/*.md", "**/VERSION", ".*.yaml", "**/.gitignore", "docs/**", ".jenkins/**", ".github/**", ".githooks/**", ".clang-format"]
+  precedence = "aggregate"
+  SPDX-FileCopyrightText = [
+    "Copyright (c) 2025, Advanced Micro Devices, Inc."
+  ]
+  SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+  path = ["docs/**"]
+  precedence = "aggregate"
+  SPDX-FileCopyrightText = [
+    "Copyright (c) 2022-2024, NVIDIA CORPORATION."
+  ]
+  SPDX-License-Identifier = "Apache-2.0"

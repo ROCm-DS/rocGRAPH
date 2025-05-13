@@ -1,0 +1,105 @@
+/* ************************************************************************
+ * Copyright (C) 2018-2024 Advanced Micro Devices, Inc. All rights Reserved.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ * ************************************************************************ */
+
+/*! \file
+ *  \brief doxygen group definitions
+ */
+
+/*! \defgroup aux_module GRAPH Auxiliary functions
+ *  \brief This module holds all graph auxiliary functions.
+ *
+ *  \details
+ *  The functions that are contained in the auxiliary module describe all available
+ *  helper functions that are required for subsequent library calls.
+ *
+ *  The functions in this module do not support execution in a hipGraph context.
+ */
+
+/*! \defgroup types_module GRAPH Types
+ *  \brief This module holds all graph types.
+ */
+
+/*! \defgroup level1_module GRAPH Level 1 routines
+ *  \brief This module holds all graph level 1 routines.
+ *
+ *  \details
+ *  The graph level 1 routines describe operations between a vector in graph format
+ *  and a vector in dense format.
+ */
+
+/*! \defgroup level2_module GRAPH Level 2 routines
+ *  \brief This module holds all graph level 2 routines.
+ *
+ *  \details
+ *  The graph level 2 routines describe operations between a matrix in graph format
+ *  and a vector in dense format.
+ */
+
+/*! \defgroup level3_module GRAPH Level 3 routines
+ *  \brief This module holds all graph level 3 routines.
+ *
+ *  \details
+ *  The graph level 3 routines describe operations between a matrix in graph format
+ *  and multiple vectors in dense format that can also be seen as a dense matrix.
+ */
+
+/*! \defgroup extra_module GRAPH Extra routines
+ *  \brief This module holds all graph extra routines.
+ *
+ *  \details
+ *  The graph extra routines describe operations that manipulate graph matrices.
+ *
+ *  The routines in this module do not support execution in a hipGraph context.
+ */
+
+/*! \defgroup precond_module GRAPH Preconditioners
+ *  \brief This module holds all graph preconditioners.
+ *
+ *  \details
+ *  The graph preconditioners describe manipulations on a matrix in graph format to
+ *  obtain a graph preconditioner matrix.
+ */
+
+/*! \defgroup conv_module GRAPH Conversion routines
+ *  \brief This module holds all graph conversion routines.
+ *
+ *  \details
+ *  The graph conversion routines describe operations on a matrix in graph format to
+ *  obtain a matrix in a different graph format.
+ */
+
+/*! \defgroup generic_module GRAPH Generic routines
+ *  \brief This module holds all graph generic routines.
+ *
+ *  \details
+ *  The graph generic routines are a set of functions that can be used if index and
+ *  data types need to be mixed.
+ */
+
+/*! \defgroup reordering_module GRAPH Reordering routines
+ *  \brief This module holds all graph reordering routines.
+ *
+ *  \details
+ *  The graph reordering routines are a set of functions that can be used for creating colorings of
+ *  graph matrices
+ */

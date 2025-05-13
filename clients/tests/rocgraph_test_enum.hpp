@@ -1,0 +1,229 @@
+/*! \file */
+
+// Copyright (C) 2024 Advanced Micro Devices, Inc. All rights Reserved.
+// SPDX-FileCopyrightText: 2025 Advanced Micro Devices, Inc.
+//
+// SPDX-License-Identifier: MIT
+
+#pragma once
+#include "rocgraph_arguments.hpp"
+template <std::size_t N, typename T>
+static constexpr std::size_t countof2(T (&)[N])
+{
+    return N;
+}
+
+// clang-format off
+#define ROCGRAPH_FOREACH_TEST_ENUM		\
+  TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_balanced_cut_clustering)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_betweenness_centrality)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_bfs)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_core_number)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_ecg)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_edge_betweenness_centrality)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_eigenvector_centrality)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_extract_ego)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_extract_induced_subgraph)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_extract_paths)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_generate_rmat_edgelist)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_hits)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_jaccard_coefficients)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_k_core)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_k_truss_subgraph)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_katz_centrality)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_legacy_ecg)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_leiden)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_louvain)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_node2vec)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_out_degrees)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_overlap_coefficients)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_pagerank)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sg_graph_create)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sorensen_coefficients)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_spectral_modularity_maximization)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sssp)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_strongly_connected_components)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_triangle_count)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_two_hop_neighbors)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_uniform_neighbor_sample)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_uniform_random_walks)\
+TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_weakly_connected_components)
+// clang-format on
+
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_device_array_create)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_device_array_create_from_view)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_device_array_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_device_array_view)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_device_array_view_as_type)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_device_array_view_create)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_device_array_view_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_device_array_view_size)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_device_array_view_type)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_device_array_view_pointer)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_host_array_create)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_host_array_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_host_array_view)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_host_array_view_create)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_host_array_view_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_host_array_size)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_host_array_pointer)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_host_array_view_copy)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_device_array_view_copy_from_host)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_device_array_view_copy_to_host)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_type_erased_device_array_view_copy)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_centrality_result_get_vertices)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_centrality_result_get_values)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_centrality_result_get_num_iterations)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_centrality_result_converged)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_centrality_result_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_personalized_pagerank)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_personalized_pagerank_allow_nonconvergence)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_edge_centrality_result_get_src_vertices)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_edge_centrality_result_get_dst_vertices)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_edge_centrality_result_get_edge_ids)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_edge_centrality_result_get_values)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_edge_centrality_result_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_hierarchical_clustering_result_get_vertices)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_hierarchical_clustering_result_get_clusters)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_hierarchical_clustering_result_get_modularity)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_hierarchical_clustering_result_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_analyze_clustering_modularity)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_analyze_clustering_edge_cut)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_analyze_clustering_ratio_cut)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_clustering_result_get_vertices)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_clustering_result_get_clusters)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_clustering_result_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_core_result_create)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_core_result_get_vertices)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_core_result_get_core_numbers)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_core_result_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_error_message)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_error_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_create_vertex_pairs)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_vertex_pairs_get_first)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_vertex_pairs_get_second)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_vertex_pairs_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_induced_subgraph_get_sources)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_induced_subgraph_get_destinations)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_induced_subgraph_get_edge_weights)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_induced_subgraph_get_edge_ids)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_induced_subgraph_get_edge_type_ids)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_induced_subgraph_get_subgraph_offsets)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_induced_subgraph_result_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_allgather)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_count_multi_edges)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_in_degrees)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_degrees)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_degrees_result_get_vertices)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_degrees_result_get_in_degrees)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_degrees_result_get_out_degrees)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_degrees_result_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_coo_get_sources)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_coo_get_destinations)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_coo_get_edge_weights)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_coo_get_edge_id)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_coo_get_edge_type)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_coo_list_size)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_coo_list_element)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_coo_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_coo_list_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_generate_edge_weights)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_generate_edge_ids)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_generate_edge_types)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_graph_create_sg)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_graph_create_sg_from_csr)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_mg_graph_create)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_graph_create_mg)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_graph_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sg_graph_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_mg_graph_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_data_mask_create)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_graph_get_data_mask)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_graph_add_data_mask)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_graph_release_data_mask)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_data_mask_destroy)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_labeling_result_get_vertices)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_labeling_result_get_labels)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_labeling_result_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_rng_state_create)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_rng_state_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_create_handle)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_handle_get_comm_size)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_handle_get_rank)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_destroy_handle)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_biased_random_walks)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_random_walk_result_get_max_path_length)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_random_walk_result_get_paths)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_random_walk_result_get_weights)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_random_walk_result_get_path_sizes)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_random_walk_result_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sampling_options_create)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sampling_set_retain_seeds)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sampling_set_renumber_results)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sampling_set_compress_per_hop)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sampling_set_with_replacement)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sampling_set_return_hops)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sampling_set_compression_type)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sampling_set_prior_sources_behavior)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sampling_set_dedupe_sources)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sampling_options_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_sources)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_destinations)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_majors)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_minors)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_major_offsets)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_start_labels)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_edge_id)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_edge_type)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_edge_weight)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_hop)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_label_hop_offsets)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_index)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_offsets)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_renumber_map)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_get_renumber_map_offsets)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_sample_result_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_test_sample_result_create)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_test_uniform_neighborhood_sample_result_create)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_select_random_vertices)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_similarity_result_get_vertex_pairs)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_similarity_result_get_similarity)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_similarity_result_free)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_all_pairs_jaccard_coefficients)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_all_pairs_sorensen_coefficients)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_all_pairs_overlap_coefficients)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_paths_result_get_vertices)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_paths_result_get_distances)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_paths_result_get_predecessors)
+//TRANSFORM_ROCGRAPH_TEST_ENUM(rocgraph_paths_result_free)
+//
+
+struct rocgraph_test_enum
+{
+private:
+public:
+    /////
+#define TRANSFORM_ROCGRAPH_TEST_ENUM(x_) x_,
+    typedef enum _ : int32_t
+    {
+        ROCGRAPH_FOREACH_TEST_ENUM
+    } value_type;
+    static constexpr value_type all_test_enum[] = {ROCGRAPH_FOREACH_TEST_ENUM};
+#undef TRANSFORM_ROCGRAPH_TEST_ENUM
+    /////
+    static constexpr std::size_t num_test_enum = countof2(all_test_enum);
+    value_type                   value{};
+
+private:
+    /////
+#define TRANSFORM_ROCGRAPH_TEST_ENUM(x_) #x_,
+    static constexpr const char* s_test_enum_names[num_test_enum]{ROCGRAPH_FOREACH_TEST_ENUM};
+#undef TRANSFORM_ROCGRAPH_TEST_ENUM
+    /////
+
+public:
+    static inline const char* to_string(rocgraph_test_enum::value_type value)
+    {
+        return s_test_enum_names[value];
+    }
+};
