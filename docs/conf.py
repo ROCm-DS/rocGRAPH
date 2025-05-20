@@ -35,9 +35,29 @@ html_theme_options = {"flavor": "rocm-ds"}
 
 extensions = [
     "rocm_docs",
-    "breathe",
-    "sphinx.ext.autodoc",
+    "rocm_docs.doxygen",
+    "sphinx.ext.autodoc",  # Automatically create API documentation from Python docstrings
+    "breathe", # For Doxygen C++ docs
 ]
+
+# Breathe configuration for Doxygen
+breathe_projects = {"rocGRAPH": "./doxygen/xml"}  # Ensure Doxygen XML is in ./xml
+breathe_default_project = "rocGRAPH"
+
+autodoc_default_options = {
+    "members": True,
+    "undoc-members": True,
+    "special-members": "__init__, __getitem__",
+    "inherited-members": True,
+    "show-inheritance": True,
+    "imported-members": False,
+    "member-order": "bysource",  # bysource: seems unfortunately not to work for Cython modules
+}
+
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".pyx": "pyx_parser.PyxParser",
+}
 
 external_toc_path = "./sphinx/_toc.yml"
 doxygen_root = "doxygen"
