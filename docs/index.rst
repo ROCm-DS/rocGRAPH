@@ -31,6 +31,6 @@ The rocGRAPH documentation is structured as follows:
 
     * :ref:`rocgraph-reference`
 
-To contribute to the documentation refer to `Contributing to ROCm-DS  <https://rocm.docs.amd.com/projects/ROCm-DS/latest/contribute/contributing.html>`_.
+To contribute to the documentation refer to `Contributing to ROCm-DS  <https://rocm.docs.amd.com/projects/rocm-ds/en/latest/contribute/contributing.html>`_.
 
-You can find licensing information on the `Licensing <https://rocm.docs.amd.com/projects/ROCm-DS/latest/about/license.html>`_ page.
+You can find licensing information on the `Licensing <https://rocm.docs.amd.com/projects/rocm-ds/en/latest/about/license.html>`_ page.
