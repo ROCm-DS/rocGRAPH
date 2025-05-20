@@ -41,7 +41,7 @@ extensions = [
 
 external_toc_path = "./sphinx/_toc.yml"
 doxygen_root = "doxygen"
-doxysphinx_enabled = False
+doxysphinx_enabled = True
 doxygen_project = {
     "name": "doxygen",
     "path": "doxygen/xml",
