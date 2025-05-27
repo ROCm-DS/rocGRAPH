@@ -242,6 +242,11 @@ if(BUILD_FILE_REORG_BACKWARD_COMPATIBILITY)
     rocgraph/${CMAKE_INSTALL_INCLUDEDIR})
 endif()
 
+if(BUILD_CODE_COVERAGE)
+  target_compile_options( rocgraph PRIVATE -g -O0 -fprofile-instr-generate -fcoverage-mapping)
+  target_link_options( rocgraph PUBLIC -fprofile-instr-generate )
+endif()
+
 execute_process(
   COMMAND
     ${CMAKE_COMMAND} -E copy_directory ${PROJECT_SOURCE_DIR}/library/include
