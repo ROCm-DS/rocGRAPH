@@ -68,6 +68,7 @@ option(BUILD_COMPRESSED_DBG "Enable compressed debug symbols" ON)
 option(DOWNLOAD_CLIENTS_TEST_MATRICES "Download client test matrices" OFF)
 option(BUILD_WITH_OFFLOAD_COMPRESS
        "Enable offload compression during compilation" ON)
+option(BUILD_CODE_COVERAGE "Build with code coverage flags (clang only)" OFF)
 # Clients utilize rocgraph fortran API and a fortran compiler
 if(NOT BUILD_FORTRAN_CLIENTS)
   option(BUILD_FORTRAN_CLIENTS
