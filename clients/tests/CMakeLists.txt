@@ -241,5 +241,41 @@ add_custom_target(rocgraph-test-data DEPENDS "${ROCGRAPH_TEST_DATA}")
 
 add_dependencies(rocgraph-test rocgraph-test-data rocgraph-common)
 
+if(BUILD_CODE_COVERAGE)
+  add_custom_target(
+    code_cov_tests
+    DEPENDS rocgraph-test
+    COMMAND ${CMAKE_COMMAND} -E rm -rf ./coverage-report
+    COMMAND ${CMAKE_COMMAND} -E make_directory ./coverage-report/profraw
+    COMMAND ${CMAKE_COMMAND} -E env LLVM_PROFILE_FILE="./coverage-report/profraw/rocgraph-coverage_%m.profraw" $<TARGET_FILE:rocgraph-test>
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+  )
+
+  find_program(
+    LLVM_PROFDATA
+    llvm-profdata
+    REQUIRED
+    HINTS ${ROCM_PATH}/llvm-bin
+    PATHS /opt/rocm/llvm/bin
+  )
+
+    find_program(
+    LLVM_COV
+    llvm-cov
+    REQUIRED
+    HINTS ${ROCM_PATH}/llvm/bin
+    PATHS /opt/rocm/llvm/bin
+  )
+
+  add_custom_target(
+    coverage
+    DEPENDS code_cov_tests
+    COMMAND ${LLVM_PROFDATA} merge -sparse ./coverage-report/profraw/rocgraph-coverage_*.profraw -o ./coverage-report/rocgraph.profdata
+    COMMAND ${LLVM_COV} report -object ./library/src/librocgraph.so -instr-profile=./coverage-report/rocgraph.profdata
+    COMMAND ${LLVM_COV} show -object ./library/src/librocgraph.so -instr-profile=./coverage-report/rocgraph.profdata -format=html -output-dir=coverage-report
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+  )
+endif()
+
 rocm_install(FILES ${ROCGRAPH_TEST_DATA} DESTINATION
              "${CMAKE_INSTALL_DATADIR}/rocgraph/test" COMPONENT tests)
