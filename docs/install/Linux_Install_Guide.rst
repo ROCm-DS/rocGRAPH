@@ -20,7 +20,7 @@ you have a system with a compatible AMD GPU. hipGRAPH has been tested with the f
 
 * OS: Ubuntu 22.04
 * ROCm: 6.4.0
-* GPUs: gfx1100, gfx90a
+* GPUs: GPUs: MI210 and Radeon RX7900 GRE
 
 Building rocGRAPH from source
 ==============================
