@@ -18,9 +18,9 @@ Prerequisites
 rocGRAPH requires a ROCm-enabled platform as an implementation backend. This documentation assumes that
 you have a system with a compatible AMD GPU. hipGRAPH has been tested with the following system requirements:
 
-* OS: Ubuntu 22.04
-* ROCm: 6.4.0
-* GPUs: GPUs: MI210 and Radeon RX7900 GRE
+* Ubuntu version: 22.04
+* ROCm version: 6.4.0
+* AMD GPUs: AMD Instinct MI210 and AMD Radeon RX7900 GRE
 
 Building rocGRAPH from source
 ==============================
