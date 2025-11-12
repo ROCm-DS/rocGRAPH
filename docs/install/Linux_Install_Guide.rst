@@ -15,7 +15,12 @@ following steps.
 Prerequisites
 =============
 
-- A ROCm enabled platform. For more information, see `ROCm installation on Linux <https://rocm.docs.amd.com/projects/install-on-linux/en/latest/>`_.
+rocGRAPH requires a ROCm-enabled platform as an implementation backend. This documentation assumes that
+you have a system with a compatible AMD GPU. rocGRAPH has been tested with the following system requirements:
+
+* Ubuntu version: 22.04
+* ROCm version: 6.4.0
+* AMD GPUs: AMD Instinct MI210 and AMD Radeon RX7900 GRE
 
 Building rocGRAPH from source
 ==============================
@@ -25,7 +30,7 @@ The following instructions can be used to build rocGRAPH from source files.
 Requirements
 ------------
 
-- `AMD ROCm 6.4.0 or later <https://rocm.docs.amd.com/projects/install-on-linux/en/latest/>`_
+- `AMD ROCm 6.4.0 <https://rocm.docs.amd.com/projects/install-on-linux/en/docs-6.4.0/>`_
 - `rocPRIM <https://github.com/ROCm/rocPRIM>`_
 - `git <https://git-scm.com/>`_
 - `CMake <https://cmake.org/>`_ 3.5 or later
@@ -148,31 +153,6 @@ You can test the installation by running one of the rocGRAPH examples after succ
    $ ./example_csrmv 1000
 
 .. _supported-targets:
-
-Supported Targets
-=================
-
-Currently, rocGRAPH is supported under the following operating systems
-
-- `Ubuntu 16.04 <https://ubuntu.com/>`_
-- `Ubuntu 18.04 <https://ubuntu.com/>`_
-- `CentOS 7 <https://www.centos.org/>`_
-- `SLES 15 <https://www.suse.com/solutions/enterprise-linux/>`_
-
-To compile and run rocGRAPH, `AMD ROCm Platform <https://github.com/ROCm/ROCm>`_ is required.
-
-The following HIP capable devices are currently supported
-
-- gfx906 (e.g. Vega20, MI50, MI60)
-- gfx908
-- gfx90a (e.g. MI200)
-- gfx940
-- gfx941
-- gfx942
-- gfx1030 (e.g. Navi21)
-- gfx1100 (e.g. Navi31)
-- gfx1101 (e.g. Navi32)
-- gfx1102 (e.g. Navi33)
 
 Common build problems
 =====================
