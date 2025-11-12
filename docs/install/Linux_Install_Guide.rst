@@ -16,7 +16,7 @@ Prerequisites
 =============
 
 rocGRAPH requires a ROCm-enabled platform as an implementation backend. This documentation assumes that
-you have a system with a compatible AMD GPU. hipGRAPH has been tested with the following system requirements:
+you have a system with a compatible AMD GPU. rocGRAPH has been tested with the following system requirements:
 
 * Ubuntu version: 22.04
 * ROCm version: 6.4.0
@@ -30,7 +30,7 @@ The following instructions can be used to build rocGRAPH from source files.
 Requirements
 ------------
 
-- `AMD ROCm 6.4.0 or later <https://rocm.docs.amd.com/projects/install-on-linux/en/latest/>`_
+- `AMD ROCm 6.4.0 <https://rocm.docs.amd.com/projects/install-on-linux/en/docs-6.4.0/>`_
 - `rocPRIM <https://github.com/ROCm/rocPRIM>`_
 - `git <https://git-scm.com/>`_
 - `CMake <https://cmake.org/>`_ 3.5 or later
