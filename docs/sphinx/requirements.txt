@@ -41,12 +41,8 @@ click-log==0.4.0
     # via doxysphinx
 comm==0.2.2
     # via ipykernel
-contourpy==1.3.2
-    # via matplotlib
 cryptography==45.0.2
     # via pyjwt
-cycler==0.12.1
-    # via matplotlib
 debugpy==1.8.14
     # via ipykernel
 decorator==5.2.1
@@ -58,7 +54,7 @@ docutils==0.21.2
     #   myst-parser
     #   pydata-sphinx-theme
     #   sphinx
-doxysphinx==3.3.12
+doxysphinx==3.3.14
     # via -r requirements.in
 exceptiongroup==1.3.0
     # via ipython
@@ -68,8 +64,6 @@ fastjsonschema==2.21.1
     # via
     #   nbformat
     #   rocm-docs-core
-fonttools==4.58.0
-    # via matplotlib
 gitdb==4.0.12
     # via gitpython
 gitpython==3.1.44
@@ -112,8 +106,6 @@ jupyter-core==5.7.2
     #   jupyter-client
     #   nbclient
     #   nbformat
-kiwisolver==1.4.8
-    # via matplotlib
 libsass==0.22.0
     # via doxysphinx
 lxml==5.2.1
@@ -124,8 +116,6 @@ markdown-it-py==3.0.0
     #   myst-parser
 markupsafe==3.0.2
     # via jinja2
-matplotlib==3.10.3
-    # via doxysphinx
 matplotlib-inline==0.1.7
     # via
     #   ipykernel
@@ -151,23 +141,15 @@ nbformat==5.10.4
     #   nbclient
 nest-asyncio==1.6.0
     # via ipykernel
-numpy==1.26.4
-    # via
-    #   contourpy
-    #   doxysphinx
-    #   matplotlib
 packaging==25.0
     # via
     #   ipykernel
-    #   matplotlib
     #   pydata-sphinx-theme
     #   sphinx
 parso==0.8.4
     # via jedi
 pexpect==4.9.0
     # via ipython
-pillow==11.2.1
-    # via matplotlib
 platformdirs==4.3.8
     # via jupyter-core
 prompt-toolkit==3.0.51
@@ -200,13 +182,9 @@ pyjwt[crypto]==2.10.1
 pynacl==1.5.0
     # via pygithub
 pyparsing==3.2.3
-    # via
-    #   doxysphinx
-    #   matplotlib
+    # via doxysphinx
 python-dateutil==2.9.0.post0
-    # via
-    #   jupyter-client
-    #   matplotlib
+    # via jupyter-client
 pyyaml==6.0.2
     # via
     #   jupyter-cache
