@@ -1,6 +1,6 @@
 .. meta::
   :description: rocGRAPH documentation and API reference library
-  :keywords: Graph, Graph-algorithms, Graph-analysis, Graph-processing, Complex-networks, rocGraph, hipGraph, cuGraph, NetworkX, GPU, RAPIDS, ROCm-DS
+  :keywords: Graph, Graph-algorithms, Graph-analysis, Graph-processing, Complex-networks, rocGraph, hipGraph, cuGraph, NetworkX, GPU, RAPIDS, AMD Data Science
 
 .. _contributing-to-rocgraph:
 
@@ -76,7 +76,7 @@ Code Structure
 ==============
 
 The following is the structure of the rocGRAPH library in the GitHub repository. A more detailed description of the directory structure can be
-found in the `rocGRAPH documentation <https://github.com/ROCm-DS/projects/rocGRAPH/en/latest/index.html>`_.
+found in the `rocGRAPH documentation <https://github.com/AMD-Ecosystem/projects/rocGRAPH/en/latest/index.html>`_.
 
 The ``library/include/`` directory contains the ``rocgraph.h`` header (which itself includes headers defining the public API of rocGRAPH). The ``library/include/`` directory
 also contains the headers for all the rocGRAPH public types.
