@@ -1,6 +1,6 @@
 .. meta::
   :description: rocGRAPH documentation and API reference library
-  :keywords: Graph, Graph-algorithms, Graph-analysis, Graph-processing, Complex-networks, rocGraph, hipGraph, cuGraph, NetworkX, GPU, RAPIDS, ROCm-DS
+  :keywords: Graph, Graph-algorithms, Graph-analysis, Graph-processing, Complex-networks, rocGraph, hipGraph, cuGraph, NetworkX, GPU, RAPIDS, AMD Data Science
 
 .. _rocgraph_logging:
 

@@ -1,6 +1,6 @@
 .. meta::
   :description: rocGRAPH documentation and API reference library
-  :keywords: Graph, Graph-algorithms, Graph-analysis, Graph-processing, Complex-networks, rocGraph, hipGraph, cuGraph, NetworkX, GPU, RAPIDS, ROCm-DS
+  :keywords: Graph, Graph-algorithms, Graph-analysis, Graph-processing, Complex-networks, rocGraph, hipGraph, cuGraph, NetworkX, GPU, RAPIDS, AMD Data Science
 
 .. _linux-install:
 
@@ -43,12 +43,12 @@ Requirements
 Download rocGRAPH
 -------------------
 
-The rocGRAPH source code is available at the `rocGRAPH GitHub page <https://github.com/ROCm-DS/rocGRAPH>`_.
+The rocGRAPH source code is available at the `rocGRAPH GitHub page <https://github.com/AMD-Ecosystem/rocGRAPH>`_.
 Download the source code using the following commands:
 
 .. code:: bash
 
-  $ git clone https://github.com/ROCm-DS/rocGRAPH.git
+  $ git clone https://github.com/AMD-Ecosystem/rocGRAPH.git
   $ cd rocGRAPH
 
 Using ``install.sh`` to build rocGRAPH with dependencies and clients

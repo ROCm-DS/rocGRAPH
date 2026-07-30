@@ -1,6 +1,6 @@
 .. meta::
   :description: rocGRAPH documentation and API reference library
-  :keywords: Graph, Graph-algorithms, Graph-analysis, Graph-processing, Complex-networks, rocGraph, hipGraph, cuGraph, NetworkX, GPU, RAPIDS, ROCm-DS
+  :keywords: Graph, Graph-algorithms, Graph-analysis, Graph-processing, Complex-networks, rocGraph, hipGraph, cuGraph, NetworkX, GPU, RAPIDS, AMD Data Science
 
 .. _rocgraph:
 
@@ -16,7 +16,7 @@ components, link analysis, link prediction, etc) for operations on graph matrice
 accessible through C-API functions. It is implemented on top of AMD's ROCm runtime and toolchains,
 is created using the HIP programming language, and is optimized for AMD's latest discrete GPUs.
 
-The code is open and hosted at: https://github.com/ROCm-DS/rocGRAPH
+The code is open and hosted at: https://github.com/AMD-Ecosystem/rocGRAPH
 
 The rocGRAPH documentation is structured as follows:
 
@@ -31,6 +31,6 @@ The rocGRAPH documentation is structured as follows:
 
     * :ref:`rocgraph-reference`
 
-To contribute to the documentation refer to `Contributing to ROCm-DS  <https://rocm.docs.amd.com/projects/rocm-ds/en/latest/contribute/contributing.html>`_.
+To contribute to the documentation refer to `Contributing to AMD Data Science  <https://rocm.docs.amd.com/projects/rocm-ds/en/latest/contribute/contributing.html>`_.
 
 You can find licensing information on the `Licensing <https://rocm.docs.amd.com/projects/rocm-ds/en/latest/about/license.html>`_ page.
